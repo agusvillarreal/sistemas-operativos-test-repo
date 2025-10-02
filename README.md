@@ -1,1 +1,0 @@
-# sistemas-operativos-test-repo
