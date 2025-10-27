@@ -28,6 +28,9 @@
 | **[ADVANCED_FIFO_DEMOS.md](ADVANCED_FIFO_DEMOS.md)** | Detailed teaching guide | 30 min |
 | **[ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)** | Visual system diagrams | 20 min |
 | **[IPC_DEMO_GUIDE.md](IPC_DEMO_GUIDE.md)** | Full IPC course guide | 45 min |
+| **[STUDENT_ACTIVITIES.md](STUDENT_ACTIVITIES.md)** | Hands-on activities for students | 30 min |
+| **[ACTIVITY_WORKSHEET.md](ACTIVITY_WORKSHEET.md)** | Printable progress tracker | 5 min |
+| **[ACTIVITY_TEMPLATES.md](ACTIVITY_TEMPLATES.md)** | Code templates for activities | 20 min |
 
 ---
 

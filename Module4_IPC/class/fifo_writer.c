@@ -16,7 +16,7 @@ int main(void) {
   fd = open(fifo_path, O_WRONLY);
   if (fd == -1) {
     perror("open");
-    printf("Make sure to run './fifo' first to create the FIFO!\n");
+    gi printf("Make sure to run './fifo' first to create the FIFO!\n");
     return 1;
   }
 
