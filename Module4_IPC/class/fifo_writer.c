@@ -16,7 +16,7 @@ int main(void) {
   fd = open(fifo_path, O_WRONLY);
   if (fd == -1) {
     perror("open");
-    gi printf("Make sure to run './fifo' first to create the FIFO!\n");
+    printf("Make sure to run './fifo' first to create the FIFO!\n");
     return 1;
   }
 
@@ -30,7 +30,7 @@ int main(void) {
     }
 
     /* Remove newline */
-    message[strcspn(message, "\n")] = 0;
+    message[strcspn(message, "\n")] = 0; // < --------
 
     /* Check for quit */
     if (strcmp(message, "quit") == 0) {
@@ -38,7 +38,7 @@ int main(void) {
     }
 
     /* Write to FIFO */
-    if (write(fd, message, strlen(message) + 1) == -1) {
+    if (write(fd, message, strlen(message) + 1) == -1) { // < --------
       perror("write");
       break;
     }
