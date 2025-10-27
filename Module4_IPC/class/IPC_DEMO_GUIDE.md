@@ -301,8 +301,30 @@ Multiple producers adding to a queue, consumers removing from it, semaphores con
 ### Priority Messages
 Message queues support message types - can receive high-priority messages first.
 
-### Bidirectional Communication
-Two message queues - one for each direction of communication.
+### Advanced FIFO Demos ⭐ NEW!
+**Two powerful FIFO patterns now available:**
+
+1. **Multiple Writers, One Reader**
+   - Demo: `fifo_multi_reader` + `fifo_multi_writer`
+   - Shows concurrent writing to single reader
+   - Perfect for logging/monitoring systems
+
+2. **Bidirectional Communication**
+   - Demo: `fifo_bidir_server` + `fifo_bidir_client`
+   - Request-response pattern with two FIFOs
+   - Client-server communication example
+
+**Quick Start:**
+```bash
+make advanced-fifo
+./fifo_multi_reader    # Terminal 1
+./fifo_multi_writer 1  # Terminal 2
+./fifo_multi_writer 2  # Terminal 3
+```
+
+**Full Documentation:**
+- `ADVANCED_FIFO_DEMOS.md` - Detailed guide with teaching points
+- `ADVANCED_FIFO_QUICKSTART.md` - Quick reference for demos
 
 ---
 
