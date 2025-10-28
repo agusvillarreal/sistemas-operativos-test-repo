@@ -183,6 +183,8 @@ After completing this course, students will be able to:
 
 ## 🎓 Grading
 
+### Option 1: Homework-Based (5 Assignments)
+
 | Assignment | Weight | Points | Duration |
 |------------|--------|--------|----------|
 | Homework 1: Process Management | 15% | 100 | 2 weeks |
@@ -191,6 +193,22 @@ After completing this course, students will be able to:
 | Homework 4: Chat System (IPC) | 20% | 100 | 3 weeks |
 | Homework 5: Kernel Module | 25% | 100 | 3 weeks |
 | **Total** | **100%** | **500** | |
+
+### Option 2: With Final Project (Capstone)
+
+| Assignment | Weight | Points | Duration |
+|------------|--------|--------|----------|
+| Homework 1-3 (Modules 1-3) | 20% | 100 each | Weeks 1-6 |
+| **Final Project: Enterprise Storage Manager** | **60%** | **300** | **6 weeks** |
+| Presentation & Documentation | 20% | 100 | Final week |
+| **Total** | **100%** | **800** | |
+
+**NEW! 🎉 Final Project Available:**
+- Complete enterprise storage management system
+- Integrates ALL 5 modules + file systems administration
+- RAID, LVM, filesystems, security, monitoring, backup
+- 300 points (+ 50 bonus)
+- See `FINAL_PROJECT_StorageManager.md` for details
 
 ---
 
