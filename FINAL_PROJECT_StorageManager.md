@@ -1,11 +1,6 @@
 # Final Project: Enterprise Storage Manager
 ## Linux Systems Programming - Capstone Project
 
-**Weight:** 300 points (60% of final grade or standalone project)  
-**Duration:** 6 weeks  
-**Difficulty:** ⭐⭐⭐⭐⭐ (Very Hard - Integrates ALL course concepts)  
-**Team Size:** 2-3 students (or individual with reduced scope)
-
 ---
 
 ## Project Overview
