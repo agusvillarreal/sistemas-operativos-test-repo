@@ -1173,11 +1173,6 @@ crontab -e
    - Performance results
    - Lessons learned
 
-3. **Demo Video** (5-10 minutes)
-   - Screen recording
-   - Voice narration
-   - Show real usage
-
 **Grading Rubric:**
 - Demo quality and completeness
 - Presentation clarity
