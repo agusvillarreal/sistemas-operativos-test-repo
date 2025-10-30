@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 You will design and implement a **complete enterprise-grade storage management system** that integrates all concepts from the course plus advanced file system administration. This is a **real-world** system similar to tools used by system administrators and storage engineers.
 
@@ -26,17 +26,9 @@ A production-ready storage management system with:
 - Custom kernel module for advanced statistics
 - Comprehensive CLI and optional web interface
 
-### Why This Project?
-
-This project demonstrates **mastery** of:
-- All 5 course modules (System Calls → Kernel Modules)
-- Advanced file systems and storage administration
-- Professional software engineering practices
-- Real-world systems programming
-
 ---
 
-## 📚 Course Integration
+## Course Integration
 
 ### Module 1: System Calls Programming
 - Direct system calls: `open()`, `read()`, `write()`, `ioctl()`
@@ -128,7 +120,7 @@ This project demonstrates **mastery** of:
 
 ---
 
-## 📋 Requirements & Specifications
+## Requirements & Specifications
 
 ### Part 1: RAID Management (30 points)
 
@@ -199,10 +191,10 @@ watch cat /proc/mdstat
 ```
 
 **Grading Rubric:**
-- Array creation (all 4 levels): 10 points
-- Status monitoring and parsing: 8 points
-- Disk operations (add/remove/fail): 8 points
-- Error handling and logging: 4 points
+- Array creation (all 4 levels) 
+- Status monitoring and parsing
+- Disk operations (add/remove/fail)
+- Error handling and logging
 
 ---
 
@@ -295,10 +287,10 @@ int lvm_snapshot_create(const char *vg_name, const char *origin_lv,
 ```
 
 **Grading Rubric:**
-- PV operations: 8 points
-- VG operations: 8 points
-- LV operations: 10 points
-- Snapshot management: 9 points
+- PV operations
+- VG operations
+- LV operations
+- Snapshot management
 
 ---
 
@@ -380,10 +372,10 @@ df -h /mnt/data
 ```
 
 **Grading Rubric:**
-- Filesystem creation (multiple types): 8 points
-- Mount/unmount operations: 6 points
-- Health check and repair: 6 points
-- Resize operations: 5 points
+- Filesystem creation (multiple types)
+- Mount/unmount operations
+- Health check and repair
+- Resize operations
 
 ---
 
@@ -448,9 +440,9 @@ watch -n 1 ./storage_cli memory status
 ```
 
 **Grading Rubric:**
-- Swap creation and management: 8 points
-- Memory monitoring: 7 points
-- Automatic detection and alerts: 5 points
+- Swap creation and management
+- Memory monitoring
+- Automatic detection and alert
 
 ---
 
@@ -533,10 +525,9 @@ int audit_log(const char *operation, const char *user,
 ```
 
 **Grading Rubric:**
-- ACL implementation: 10 points
-- LUKS encryption: 12 points
-- Advanced attributes: 4 points
-- Audit logging: 4 points
+- ACL implementation
+- Advanced attributes
+- Audit logging
 
 ---
 
@@ -618,10 +609,10 @@ dd if=/dev/zero of=/mnt/data/testfile bs=1M count=1000
 ```
 
 **Grading Rubric:**
-- I/O monitoring: 10 points
-- Resource tracking: 8 points
-- Performance metrics: 8 points
-- Historical data: 4 points
+- I/O monitoring
+- Resource tracking
+- Performance metrics
+- Historical data
 
 ---
 
@@ -706,10 +697,10 @@ echo "test" >> /mnt/data/file1.txt
 ```
 
 **Grading Rubric:**
-- Snapshot management: 10 points
-- Full and incremental backups: 12 points
-- Scheduling: 8 points
-- Verification and restore: 5 points
+- Snapshot management
+- Full and incremental backups
+- Scheduling
+- Verification and restore
 
 ---
 
@@ -787,10 +778,10 @@ int perf_apply_profile(const char *device, const tuning_profile_t *profile);
 ```
 
 **Grading Rubric:**
-- I/O scheduler management: 6 points
-- Block device tuning: 5 points
-- Kernel parameter tuning: 4 points
-- Benchmarking and recommendations: 5 points
+- I/O scheduler management
+- Block device tuning
+- Kernel parameter tuning
+- Benchmarking and recommendations
 
 ---
 
@@ -872,10 +863,10 @@ wait
 ```
 
 **Grading Rubric:**
-- Socket server implementation: 10 points
-- Shared memory for status: 6 points
-- Message queue for jobs: 5 points
-- Protocol and error handling: 4 points
+- Socket server implementation
+- Shared memory for status
+- Message queue for jobs
+- Protocol and error handling
 
 ---
 
@@ -964,10 +955,10 @@ dmesg | tail
 ```
 
 **Grading Rubric:**
-- Module loads/unloads correctly: 5 points
-- /proc interface works: 6 points
-- Statistics tracking: 6 points
-- Proper synchronization: 3 points
+- Module loads/unloads correctly
+- /proc interface works
+- Statistics tracking
+- Proper synchronization:
 
 ---
 
@@ -1039,10 +1030,10 @@ ps aux | grep defunct
 ```
 
 **Grading Rubric:**
-- Proper daemonization: 5 points
-- Signal handling: 5 points
-- Worker management: 3 points
-- Resource cleanup: 2 points
+- Proper daemonization
+- Signal handling
+- Worker management
+- Resource cleanup
 
 ---
 
@@ -1125,10 +1116,10 @@ crontab -e
 ```
 
 **Grading Rubric:**
-- Health check script: 5 points
-- Backup automation: 5 points
-- Performance reporting: 3 points
-- Systemd integration: 2 points
+- Health check script
+- Backup automation
+- Performance reporting
+- Systemd integration
 
 ---
 
@@ -1170,80 +1161,9 @@ crontab -e
 
 ---
 
-### Part 14: Testing (15 points)
-
-**Required Tests:**
-
-1. **Unit Tests**
-   - Test individual components
-   - Use CUnit or similar framework
-   - Cover edge cases
-
-2. **Integration Tests**
-   - Test component interactions
-   - End-to-end workflows
-   - Error scenarios
-
-3. **Stress Tests**
-   - High I/O load
-   - Many concurrent clients
-   - Resource exhaustion
-
-4. **Test Automation**
-   - Makefile target: `make test`
-   - Automated test runner
-   - Test coverage report
-
-**Implementation Hints:**
-```c
-// test_raid.c
-#include <CUnit/CUnit.h>
-
-void test_raid_create() {
-    int ret = raid_create("/dev/md99", 1, test_devices, 2);
-    CU_ASSERT_EQUAL(ret, 0);
-    
-    // Verify array exists
-    struct stat st;
-    CU_ASSERT_EQUAL(stat("/dev/md99", &st), 0);
-}
-
-void test_raid_fail_disk() {
-    raid_fail_disk("/dev/md99", "/dev/loop0");
-    
-    raid_array_t array;
-    raid_monitor(&array);
-    CU_ASSERT_STRING_EQUAL(array.status, "degraded");
-}
-```
-
-**Testing:**
-```bash
-# Run all tests
-make test
-
-# Run specific test suite
-./tests/test_raid
-./tests/test_lvm
-./tests/test_filesystem
-
-# Stress test
-./tests/stress_test --duration=300 --clients=50
-
-# Coverage report
-make coverage
-firefox coverage/index.html
-```
-
-**Grading Rubric:**
-- Unit tests (>50% coverage): 6 points
-- Integration tests: 5 points
-- Stress tests: 2 points
-- Test automation: 2 points
-
 ---
 
-### Part 15: Presentation (15 points)
+### Part 14: Presentation (15 points)
 
 **Requirements:**
 
@@ -1264,13 +1184,13 @@ firefox coverage/index.html
    - Show real usage
 
 **Grading Rubric:**
-- Demo quality and completeness: 8 points
-- Presentation clarity: 4 points
-- Q&A handling: 3 points
+- Demo quality and completeness
+- Presentation clarity
+- Q&A handling
 
 ---
 
-## 📊 Complete Grading Rubric Summary
+## Complete Grading Rubric Summary
 
 | Component | Points | Weight |
 |-----------|--------|--------|
@@ -1287,8 +1207,7 @@ firefox coverage/index.html
 | 11. Process Management | 15 | 5% |
 | 12. Automation/Scripting | 15 | 5% |
 | 13. Documentation | 15 | 5% |
-| 14. Testing | 15 | 5% |
-| 15. Presentation | 15 | 5% |
+| 14. Presentation | 15 | 5% |
 | **TOTAL** | **300** | **100%** |
 
 ### Bonus Points (up to +50)
@@ -1301,7 +1220,7 @@ firefox coverage/index.html
 
 ---
 
-## 🗓️ Project Timeline (6 Weeks)
+## Project Timeline (6 Weeks)
 
 ### Week 1: Foundation & Core Storage (50 points)
 **Goals:**
@@ -1394,7 +1313,7 @@ firefox coverage/index.html
 
 ---
 
-## 🛠️ Development Environment
+## Development Environment
 
 ### Required Software
 ```bash
@@ -1504,7 +1423,7 @@ storage_manager/
 
 ---
 
-## 📚 Resources & References
+## Resources & References
 
 ### Man Pages (Essential Reading)
 ```bash
@@ -1559,7 +1478,7 @@ man 5 proc
 
 ---
 
-## ⚠️ Important Warnings
+## Important Warnings
 
 ### Safety First!
 1. **ALWAYS use a virtual machine**
@@ -1605,7 +1524,7 @@ man 5 proc
 
 ---
 
-## 🤝 Team Guidelines
+## Team Guidelines
 
 ### For Teams of 2-3 Students
 
@@ -1643,7 +1562,7 @@ man 5 proc
 
 ---
 
-## 📝 Submission Requirements
+## Submission Requirements
 
 ### What to Submit
 
@@ -1659,20 +1578,14 @@ man 5 proc
    - USER_MANUAL.md
    - API_REFERENCE.md
 
-3. **Tests** (in `tests/` directory)
-   - All test files
-   - Test data
-   - Test results/reports
-
-4. **Presentation Materials**
+3. **Presentation Materials**
    - Slides (PDF)
    - Demo video (MP4, uploaded to YouTube/similar)
 
-5. **Project Report** (15-20 pages, PDF)
+4. **Project Report** (15-20 pages, PDF)
    - Introduction
    - Architecture & Design
    - Implementation Details
-   - Testing & Results
    - Performance Analysis
    - Challenges & Solutions
    - Conclusion
@@ -1698,26 +1611,7 @@ project_submission/
 
 ---
 
-## 🎓 Academic Integrity
-
-### Allowed
-✅ Discuss high-level design with classmates  
-✅ Use online resources for learning  
-✅ Read man pages and documentation  
-✅ Ask instructors for clarification  
-✅ Use standard libraries and system tools
-
-### NOT Allowed
-❌ Copy code from other students  
-❌ Use code generators (ChatGPT, Copilot, etc.)  
-❌ Download complete implementations  
-❌ Share your code with others  
-❌ Submit code you didn't write yourself
-
-### Penalties
-- **First offense**: Zero on project + letter grade drop
-- **Second offense**: Fail course
-- **Severe cases**: Academic probation/expulsion
+##  Academic Integrity
 
 **We WILL check:**
 - Git commit history (should show incremental development)
@@ -1762,7 +1656,7 @@ project_submission/
 
 ---
 
-## 🏆 Evaluation Criteria
+## Evaluation Criteria
 
 ### Code Quality (implicit in all sections)
 - **Correctness**: Does it work as specified?
@@ -1802,7 +1696,7 @@ project_submission/
 
 ---
 
-## 🎉 Bonus Opportunities
+## Bonus Opportunities
 
 ### Extra Features (up to +50 points)
 
@@ -1842,17 +1736,6 @@ project_submission/
 **Note:** Bonus points are awarded for fully working, well-tested features only.
 
 ---
-
-## 📞 Getting Help
-
-### Office Hours
-- **Instructor**: Tuesday/Thursday 2-4 PM
-- **TA**: Monday/Wednesday/Friday 3-5 PM
-
-### Online Resources
-- **Discussion Forum**: Post questions (no code sharing!)
-- **Email**: For private questions only
-- **Git Issues**: Report bugs in course materials
 
 ### Debugging Help
 When asking for help, provide:
@@ -1968,37 +1851,9 @@ This project guide is provided for educational purposes as part of the Linux Sys
 
 ---
 
-## 📧 Contact & Support
-
-**Instructor:** [Your Name]  
-**Email:** [your.email@university.edu]  
-**Office:** [Building Name, Room Number]  
-**Course Website:** [URL]  
-**Forum:** [URL]
-
-**Response Times:**
-- Forum: 24 hours
-- Email: 48 hours
-- Office hours: Immediate
-
----
-
-## 🎊 Good Luck!
-
-This is a challenging but rewarding project. You'll build something real that demonstrates true mastery of Linux systems programming. Many students find this project to be the highlight of their academic career and a great addition to their portfolio.
-
-**Work hard, test thoroughly, and build something amazing!**
-
----
-
 **Document Version:** 1.0  
 **Last Updated:** October 27, 2025  
 **Course:** Linux Systems Programming  
 **Project Duration:** 6 weeks (300 points)
 
 ---
-
-*"The only way to learn systems programming is to write systems programs."*  
-*— Dennis Ritchie (Creator of C and UNIX)*
-
-

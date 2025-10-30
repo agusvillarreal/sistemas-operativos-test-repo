@@ -148,6 +148,12 @@ cat ../QUICK_REFERENCE.md
 **Warning:** ⚠️ Use a VM! Kernel bugs can crash your system  
 **Homework:** Custom Kernel Module (100 points)
 
+### Module 6: File Systems & Storage Administration (Weeks 11-13)
+**Topics:** File systems (ext4, XFS, btrfs), RAID (0, 1, 5, 10), LVM, swap, ACLs, LUKS encryption, monitoring, backup, performance tuning  
+**Tools:** mkfs, mount, mdadm, pvcreate/vgcreate/lvcreate, setfacl, cryptsetup, iostat, rsync  
+**Warning:** ⚠️ Use a VM! Storage operations can destroy data  
+**Integration:** Combines with all previous modules for Final Project
+
 ---
 
 ## 🎯 Learning Outcomes
@@ -164,6 +170,11 @@ After completing this course, students will be able to:
 ✅ Build client-server systems with sockets  
 ✅ Write loadable kernel modules  
 ✅ Create character device drivers  
+✅ Manage file systems (ext4, XFS, btrfs)  
+✅ Configure and maintain RAID arrays  
+✅ Implement LVM for flexible storage  
+✅ Secure storage with ACLs and encryption  
+✅ Monitor I/O and optimize performance  
 
 ---
 
